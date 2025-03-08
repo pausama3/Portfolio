@@ -235,6 +235,24 @@
             display: block;
             object-fit: contain;   /* Asegura que la imagen se ajuste correctamente */
         }
+        .cv-btn {
+            background-color: white;
+            color: black;
+            border: 2px solid white;
+            padding: 5px 15px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .cv-btn:hover {
+            background-color: #f0f0f0;
+            color: black;
+            transform: scale(1.05);
+        }
+
     </style>
 </head>
 
@@ -263,6 +281,10 @@
                 <img src="imagenes/github.png" alt="GitHub" style="width: 30px; height: 30px; transition: transform 0.3s;">
             </a>
         </div>
+                <!-- Botón para descargar y ver el CV -->
+        <a href="CV Pau Sangenis_Programacion.pdf" target="_blank" download="PauSangenisMalo_CV.pdf">
+            <button class="cv-btn">CV</button>
+        </a>
     </nav>
 
     <!-- Contenido principal -->
