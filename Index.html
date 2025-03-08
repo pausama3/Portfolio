@@ -25,7 +25,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Centra verticalmente el contenido */
+            justify-content: center;
         }
 
         /* Estilo del texto en la barra lateral */
@@ -62,9 +62,9 @@
             justify-content: center;
             position: fixed;
             top: 0;
-            left: 250px; /* Mismo ancho que la barra lateral */
-            width: calc(100% - 250px); /* Restar el ancho de la barra lateral */
-            z-index: 2; /* Encima de la barra lateral */
+            left: 250px;
+            width: calc(100% - 250px);
+            z-index: 2;
         }
 
         /* Botones del header */
@@ -82,15 +82,25 @@
             transition: all 0.3s ease;
         }
 
-        .cabecera button:hover {
+        .cabecera button:hover,
+        .cabecera button.active {
             background-color: white;
             color: black;
         }
 
         /* Estilo del contenido principal */
         .contenido {
-            margin-left: 250px; /* Espacio para la barra lateral */
-            padding: 80px 40px 20px 40px; /* Padding izquierdo para que no lo tape el nav */
+            margin-left: 250px;
+            padding: 80px 40px 20px 40px;
+        }
+
+        /* Secciones ocultas por defecto */
+        .seccion {
+            display: none;
+        }
+
+        .seccion.active {
+            display: block;
         }
     </style>
 </head>
@@ -105,17 +115,51 @@
     <!-- Header fijo en la parte superior -->
     <header>
         <div class="cabecera">
-            <button>Acerca</button>
-            <button>Proyectos</button>
-            <button>Contacto</button>
+            <button onclick="mostrarSeccion('acerca')" class="active">Acerca</button>
+            <button onclick="mostrarSeccion('proyectos')">Proyectos</button>
+            <button onclick="mostrarSeccion('contacto')">Contacto</button>
         </div>
     </header>
 
     <!-- Contenido principal -->
     <div class="contenido">
-        <h1>Bienvenido a mi Portafolio</h1>
-        <p>Aquí encontrarás mis proyectos y habilidades en desarrollo web y videojuegos.</p>
+        <!-- Sección Acerca -->
+        <div id="acerca" class="seccion active">
+            <h1>Acerca de mí</h1>
+            <p>Me llamo Pau Sangenis Malo, desarrollador web y de videojuegos. ¡Bienvenido a mi portafolio!</p>
+        </div>
+
+        <!-- Sección Proyectos -->
+        <div id="proyectos" class="seccion">
+            <h1>Mis Proyectos</h1>
+            <p>Aquí encontrarás algunos de mis proyectos en desarrollo web y videojuegos.</p>
+        </div>
+
+        <!-- Sección Contacto -->
+        <div id="contacto" class="seccion">
+            <h1>Contacto</h1>
+            <p>Puedes contactarme a través de mi correo: pausama_93@hotmail.com</p>
+        </div>
     </div>
+
+    <!-- Script para cambiar secciones -->
+    <script>
+        function mostrarSeccion(seccionId) {
+            // Ocultar todas las secciones
+            const secciones = document.querySelectorAll('.seccion');
+            secciones.forEach(seccion => seccion.classList.remove('active'));
+
+            // Mostrar la sección seleccionada
+            document.getElementById(seccionId).classList.add('active');
+
+            // Actualizar los botones activos
+            const botones = document.querySelectorAll('.cabecera button');
+            botones.forEach(boton => boton.classList.remove('active'));
+
+            // Agregar clase activa al botón seleccionado
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 
 </html>
