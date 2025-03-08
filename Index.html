@@ -9,15 +9,65 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            display: flex;
         }
 
+        /* Barra lateral izquierda */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background-color: black;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Centra verticalmente el contenido */
+        }
+
+        /* Estilo del texto en la barra lateral */
+        .white {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Imagen en la barra lateral */
+        nav img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            border: 2px solid white;
+            display: block;
+            margin: 0 auto 20px auto;
+            transition: transform 0.3s ease;
+        }
+
+        nav img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilo del header */
         header {
             background-color: black;
             padding: 10px 0;
             display: flex;
             justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 250px; /* Mismo ancho que la barra lateral */
+            width: calc(100% - 250px); /* Restar el ancho de la barra lateral */
+            z-index: 2; /* Encima de la barra lateral */
         }
 
+        /* Botones del header */
         .cabecera {
             display: flex;
             gap: 20px;
@@ -36,10 +86,23 @@
             background-color: white;
             color: black;
         }
+
+        /* Estilo del contenido principal */
+        .contenido {
+            margin-left: 250px; /* Espacio para la barra lateral */
+            padding: 80px 40px 20px 40px; /* Padding izquierdo para que no lo tape el nav */
+        }
     </style>
 </head>
 
 <body>
+    <!-- Barra lateral izquierda -->
+    <nav>
+        <p class="white">Pau Sangenis Malo</p>
+        <img src="imagenes/PauSangenisMalo.png" alt="Pau">
+    </nav>
+
+    <!-- Header fijo en la parte superior -->
     <header>
         <div class="cabecera">
             <button>Acerca</button>
@@ -47,6 +110,12 @@
             <button>Contacto</button>
         </div>
     </header>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+        <h1>Bienvenido a mi Portafolio</h1>
+        <p>Aquí encontrarás mis proyectos y habilidades en desarrollo web y videojuegos.</p>
+    </div>
 </body>
 
 </html>
