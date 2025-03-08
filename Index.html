@@ -92,6 +92,52 @@
         .contenido {
             margin-left: 250px;
             padding: 80px 40px 20px 40px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo de los títulos */
+        .contenido h1 {
+            color: #333;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #ccc;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Estilo de los párrafos */
+        .contenido p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Resaltar palabras clave */
+        .resaltado {
+            color: #333;
+            font-weight: bold;
+            background-color: #e0e0e0;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        /* Enlaces en el contenido */
+        .contenido a {
+            color: #1a73e8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contenido a:hover {
+            color: #0f57c4;
+            text-decoration: underline;
         }
 
         /* Secciones ocultas por defecto */
@@ -106,11 +152,6 @@
 </head>
 
 <body>
-    <!-- Barra lateral izquierda -->
-    <nav>
-        <p class="white">Pau Sangenis Malo</p>
-        <img src="imagenes/PauSangenisMalo.png" alt="Pau">
-    </nav>
 
     <!-- Header fijo en la parte superior -->
     <header>
@@ -121,12 +162,28 @@
         </div>
     </header>
 
+    <!-- Barra lateral izquierda -->
+    <nav>
+        <p class="white">Pau Sangenis Malo</p>
+        <img src="imagenes/PauSangenisMalo.png" alt="Pau">
+
+        <h1 style="color: white; text-align: center;">Redes sociales</h1>
+        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+            <a href="https://www.linkedin.com/in/pau-sangenis-malo-79741b191" target="_blank">
+                <img src="imagenes/Linkedin-logo.png" alt="LinkedIn" style="width: 30px; height: 30px; transition: transform 0.3s;">
+            </a>
+            <a href="https://github.com/pausama3" target="_blank">
+                <img src="imagenes/github.png" alt="GitHub" style="width: 30px; height: 30px; transition: transform 0.3s;">
+            </a>
+        </div>
+    </nav>
+
     <!-- Contenido principal -->
     <div class="contenido">
         <!-- Sección Acerca -->
         <div id="acerca" class="seccion active">
             <h1>Acerca de mí</h1>
-            <p>Me llamo Pau Sangenis Malo, desarrollador web y de videojuegos. ¡Bienvenido a mi portafolio!</p>
+            <p>Mi trayectoria académica incluye un <span class="resaltado">Máster en Diseño y Programación Web</span> por la Universidad Americana de Europa (UNADE), donde adquirí habilidades en <span class="resaltado">HTML5, CSS3, JavaScript, PHP, frameworks y MySQL</span>. Actualmente, amplío mis conocimientos en desarrollo de software, enfocándome en <span class="resaltado">tecnologías emergentes</span> y optimización de procesos.</p>
         </div>
 
         <!-- Sección Proyectos -->
@@ -138,25 +195,21 @@
         <!-- Sección Contacto -->
         <div id="contacto" class="seccion">
             <h1>Contacto</h1>
-            <p>Puedes contactarme a través de mi correo: pausama_93@hotmail.com</p>
+            <p>Puedes contactarme a través de mi correo: <a href="mailto:pausama_93@hotmail.com">pausama_93@hotmail.com</a></p>
         </div>
     </div>
 
     <!-- Script para cambiar secciones -->
     <script>
         function mostrarSeccion(seccionId) {
-            // Ocultar todas las secciones
             const secciones = document.querySelectorAll('.seccion');
             secciones.forEach(seccion => seccion.classList.remove('active'));
 
-            // Mostrar la sección seleccionada
             document.getElementById(seccionId).classList.add('active');
 
-            // Actualizar los botones activos
             const botones = document.querySelectorAll('.cabecera button');
             botones.forEach(boton => boton.classList.remove('active'));
 
-            // Agregar clase activa al botón seleccionado
             event.target.classList.add('active');
         }
     </script>
