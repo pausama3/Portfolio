@@ -192,6 +192,36 @@
             line-height: 1.5;
             margin-top: 10px;
         }
+
+        /* Nueva clase para las imágenes de las skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 imágenes por fila */
+            gap: 10px;
+            justify-items: center; /* Centrar las imágenes dentro de las celdas */
+            margin-top: 20px;
+        }
+
+        .skill-img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;  /* No recorta las imágenes */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Nueva clase para las imágenes de Xaloc y Unade */
+        .empresa-img {
+            width: 120px;  /* Tamaño fijo para las imágenes de empresas */
+            height: 120px; /* Tamaño fijo para las imágenes de empresas */
+            margin: 10px auto; /* Centramos y dejamos un margen */
+            display: block;
+            object-fit: contain;   /* Asegura que la imagen se ajuste correctamente */
+        }
     </style>
 </head>
 
@@ -226,22 +256,26 @@
     <div class="contenido">
         <!-- Sección Acerca -->
         <div id="acerca" class="seccion active">
-            <h1>Acerca de mí</h1>            
+            <h1>Acerca de mí</h1>
             <p>Acerca de mis estudios tengo un grado superior en Robótica y Automatización Industrial donde empecé a programar con C++,KOP,AWL y aprendí a diseñar planos en AutoCAD. Recientemente me saque un Máster en Diseño y Programación Web por la Universidad Americana de Europa (UNADE), donde adquirí habilidades en HTML5, CSS3, JavaScript, PHP, frameworks y bases de datos MySQL.</p>
-            <img src="imagenes/Unade.png" alt="Unade">
-            <img src="imagenes/xaloc.png" alt="xaloc">
+            <!-- Aplicamos las clases de las imágenes -->
+            <img src="imagenes/Unade.png" alt="Unade" class="empresa-img">
+            <img src="imagenes/xaloc.png" alt="xaloc" class="empresa-img">
             
             <h2>skills</h2>
-            <img src="imagenes/html5.png" alt="html">
-            <img src="imagenes/css3.png" alt="css3">
-            <img src="imagenes/javascript.png" alt="javas">
-            <img src="imagenes/bootstrap.png" alt="b">
-            <img src="imagenes/mysql.png" alt="mysql">
-            <img src="imagenes/c.png" alt="c"> 
-            <img src="imagenes/php.png" alt="php">
-            <img src="imagenes/TiaPortal.jpeg" alt="tp">
-            <img src="imagenes/AutoCAD.png" alt="ac">
-            <img src="imagenes/AWLFUPKOP.jpeg" alt=""> 
+            <!-- Aplicamos la clase a las imágenes de skills -->
+            <div class="skills-container">
+                <img src="imagenes/html5.png" alt="html" class="skill-img">
+                <img src="imagenes/css3.png" alt="css3" class="skill-img">
+                <img src="imagenes/javascript.png" alt="javas" class="skill-img">
+                <img src="imagenes/bootstrap.png" alt="b" class="skill-img">
+                <img src="imagenes/mysql.png" alt="mysql" class="skill-img">
+                <img src="imagenes/c.png" alt="c" class="skill-img">
+                <img src="imagenes/php.png" alt="php" class="skill-img">
+                <img src="imagenes/TiaPortal.jpeg" alt="tp" class="skill-img">
+                <img src="imagenes/AutoCAD.png" alt="ac" class="skill-img">
+                <img src="imagenes/AWLFUPKOP.png" alt="" class="skill-img">
+            </div>
         </div>
 
         <!-- Sección Proyectos -->
