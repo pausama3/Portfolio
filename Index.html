@@ -91,7 +91,7 @@
         /* Estilo del contenido principal */
         .contenido {
             margin-left: 250px;
-            padding: 80px 40px 20px 40px;
+            padding: 80px 40px 20px 80px;
             background-color: #f5f5f5;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -106,9 +106,22 @@
             text-transform: uppercase;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
             border-bottom: 2px solid #ccc;
-            display: inline-block;
             padding-bottom: 5px;
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
         }
+        .contenido h2 {
+            color: #333;
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid #ccc; /* Añade esta línea para crear la línea debajo de h2 */
+            padding-bottom: 5px; /* Añade un poco de espacio entre el texto y la línea */
+        }
+
+    
 
         /* Estilo de los párrafos */
         .contenido p {
@@ -196,7 +209,7 @@
         /* Nueva clase para las imágenes de las skills */
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5 imágenes por fila */
+            grid-template-columns: repeat(3, 1fr); /* 5 imágenes por fila */
             gap: 10px;
             justify-items: center; /* Centrar las imágenes dentro de las celdas */
             margin-top: 20px;
@@ -256,13 +269,14 @@
     <div class="contenido">
         <!-- Sección Acerca -->
         <div id="acerca" class="seccion active">
-            <h1>Acerca de mí</h1>
+            <h1>Acerca de mi</h1>
             <p>Acerca de mis estudios tengo un grado superior en Robótica y Automatización Industrial donde empecé a programar con C++,KOP,AWL y aprendí a diseñar planos en AutoCAD. Recientemente me saque un Máster en Diseño y Programación Web por la Universidad Americana de Europa (UNADE), donde adquirí habilidades en HTML5, CSS3, JavaScript, PHP, frameworks y bases de datos MySQL.</p>
             <!-- Aplicamos las clases de las imágenes -->
             <img src="imagenes/Unade.png" alt="Unade" class="empresa-img">
             <img src="imagenes/xaloc.png" alt="xaloc" class="empresa-img">
-            
-            <h2>skills</h2>
+            <br>
+            <br>
+            <h2>Lenguajes de Programación</h2>
             <!-- Aplicamos la clase a las imágenes de skills -->
             <div class="skills-container">
                 <img src="imagenes/html5.png" alt="html" class="skill-img">
@@ -288,14 +302,16 @@
                 <!-- Cuadro de proyecto -->
                 <div class="cuadro-proyecto">
                     <img src="imagenes/proyecto1.png" alt="Proyecto 1">
-                    <h2>Proyecto 1</h2>
+                    <h2>Pagina Web</h2>
                     <p>Este es un proyecto de desarrollo web donde implementé un listado de IAs disponibles y gestion de nuevos usuarios con base de datos</p>
+                    <a href="https://tuinteligenciaia.com/" target="_blank">Link Web</a>
                 </div>
 
                 <div class="cuadro-proyecto">
                     <img src="imagenes/proyecto2.png" alt="Proyecto 2">
-                    <h2>Proyecto 2</h2>
+                    <h2>Juego Con Unity3d</h2>
                     <p>Un videojuego que recrea un juego de mesa en 3D inventado por mi e inspirado en el catan usando Unity </p>
+                    <a href="https://pausama3.itch.io/reinos-de-catania" target="_blank">Itchio link</a>
                 </div>
 
                 <!-- Puedes añadir más cuadros de proyecto aquí -->
@@ -305,7 +321,7 @@
         <!-- Sección Contacto -->
         <div id="contacto" class="seccion">
             <h1>Contacto</h1>
-            <p>Puedes contactarme a través de mi correo: <a href="mailto:pausama_93@hotmail.com">pausama_93@hotmail.com</a></p>
+            <p>Puedes contactarme a través de mi correo: <a href="mailto:pau.sangenis@outlook.com">pau.sangenis@outlook.com</a></p>
         </div>
     </div>
 
