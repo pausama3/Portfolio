@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+/* Barra lateral izquierda */
+nav {
+    position: fixed;
+    top: 0; left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.white {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* --- ZOOM EN IMAGEN DE PAU --- */
+.perfil-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid white;
+    overflow: hidden; /* Corta lo que sobra del zoom */
+    margin-bottom: 20px;
+}
+
+.perfil-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene proporción */
+    transform: scale(1.4); /* AJUSTA ESTE VALOR PARA MÁS O MENOS ZOOM */
+    transition: transform 0.3s ease;
+}
+
+.perfil-container:hover .perfil-img {
+    transform: scale(1.6); /* Efecto extra al pasar el ratón */
+}
+
+/* Header */
+header {
+    background-color: black;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0; left: 250px;
+    width: calc(100% - 250px);
+    z-index: 2;
+}
+
+.cabecera button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cabecera button:hover, .cabecera button.active {
+    background-color: white;
+    color: black;
+}
+
+/* Contenido */
+.contenido {
+    margin-left: 250px;
+    padding: 80px 40px 20px 80px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.contenido h1, .contenido h2 {
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* Skills y Proyectos */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.skill-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.skill-img:hover { transform: scale(1.1); }
+
+.contenedor-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.cuadro-proyecto {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cuadro-proyecto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Otros */
+.social-title { color: white; font-size: 1.2rem; }
+.social-icon { width: 30px; height: 30px; }
+.cv-btn {
+    background: white; border: none; padding: 10px 20px;
+    margin-top: 20px; cursor: pointer; font-weight: bold;
+}
+.seccion { display: none; }
+.seccion.active { display: block; }
+.empresa-img { width: 100px; margin: 10px; }
